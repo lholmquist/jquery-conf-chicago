@@ -67,11 +67,7 @@
         document.addEventListener('keydown', function (e) {
             var message = {};
 
-            if (this._receiverState === 'menu') {
-                message.type = 'menu';
-            } else {
-                message = e.keyCode;
-            }
+            message = e.keyCode;
             this.session_.sendMessage(TTT_NAMESPACE,
                 {message: message, type:'keydown'},
                 function () { console.log('success'); },
@@ -81,13 +77,7 @@
         document.addEventListener('keyup', function (e) {
             var message = {};
 
-
-            if (this._receiverState === 'menu') {
-                message.type = 'menu';
-                message.code = e.keyCode;
-            } else {
-                message = e.keyCode;
-            }
+            message = e.keyCode;
 
             this.session_.sendMessage(TTT_NAMESPACE,
                 {message: message, type: 'keyup'},
