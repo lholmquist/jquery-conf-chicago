@@ -1,7 +1,7 @@
 (function () {
     var TTT_NAMESPACE = 'urn:x-cast:org.lholmquist.attempt';
 
-    var TTT_APP_ID = 'BCC26770';
+    var APP_ID = 'BCC26770';
 
     this._receiverState = 'menu';
 
@@ -52,7 +52,7 @@
             return;
         }
 
-        var sessionRequest = new chrome.cast.SessionRequest(TTT_APP_ID);
+        var sessionRequest = new chrome.cast.SessionRequest(APP_ID);
 
         var apiConfig = new chrome.cast.ApiConfig(sessionRequest,
             this.sessionListener_.bind(this),
